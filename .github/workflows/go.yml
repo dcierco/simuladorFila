@@ -24,4 +24,17 @@ jobs:
     - name: Test
       run: go test -v ./...
       
-
+    
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        # Artifact name
+        name: SimuladorFila # optional, default is artifact
+        # A file, directory or wildcard pattern that describes what to upload
+        path: ignore
+        # The desired behavior if no files are found using the provided path.
+        
+    - name: Go Formatter
+      # You may pin to the exact commit or the version.
+      # uses: sladyn98/auto-go-format@6557e892479fd174506c48cb34017c51399d492b
+      uses: sladyn98/auto-go-format@v0.0.1
