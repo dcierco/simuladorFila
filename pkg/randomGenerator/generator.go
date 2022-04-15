@@ -1,16 +1,18 @@
-package randomgenerator
+package randomGenerator
 
-func metodoCongruenteLinear(semente, a, c, m, tamanho int) []int {
-	result := make([]int, 0, tamanho)
+import "fmt"
+
+func MetodoCongruenteLinear(semente, a, c, m, tamanho int) []int {
+	result := make([]int, tamanho)
 	result[0] = semente
-
-	for i := range result[:1] {
+	fmt.Printf("Assinalou a semente %q", result[0])
+	for i := 1; i < len(result); i++ {
 		result[i] = ((result[i-1] * a) + c) % m
 	}
 
 	return result
 }
 
-func exemploAula(tamanho int) []int {
-	return metodoCongruenteLinear(7, 4, 4, 9, tamanho)
+func ExemploAula(tamanho int) []int {
+	return MetodoCongruenteLinear(7, 4, 4, 9, tamanho)
 }
